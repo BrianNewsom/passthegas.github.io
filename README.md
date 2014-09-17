@@ -1,5 +1,5 @@
 passthegas
 ==========
-Developers: Dawson Botsford, Adrian Chen, Brian Newsom
+Simple, beautiful gas cost splitting application featuring full fledged Google Maps integration.
 
-Web app to help with gas cost sharing. More coming soon!
+Developers: Dawson Botsford, Adrian Chen, Brian Newsom
