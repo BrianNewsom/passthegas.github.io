@@ -128,6 +128,7 @@
 		Distance Traveled: <input type="number" name="distance">
 		Gas Mileage: <input type="number" name="mileage">
 		Number of Passengers: <input type="number" name="passengers">
+		Gas Price: <input type="number" name="gasPrice">
 		<input type="submit" value="Submit">
 	</form>
 
@@ -137,7 +138,8 @@
 		distance = document.forms["Input"]["distance"].value;
 		mileage = document.forms["Input"]["mileage"].value;
 		passengers = document.forms["Input"]["passengers"].value;
-		return distance/mileage / passengers; 
+		gasPrice = document.forms["Input"]["gasPrice"].value;
+		return distance/mileage * gasPrice / passengers; 
 	}
       	function enterForm() { 
 		alert('The trip will cost $' + calculateCosts() + '.');
