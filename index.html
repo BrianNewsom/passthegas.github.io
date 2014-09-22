@@ -123,6 +123,29 @@
         <h1>Welcome Home!</h1>
         <p class="lead">This is where we will put our main header :)</p>
         <a class="btn btn-large btn-success" href="#">Get started today</a>
+
+	<form name="Input" onsubmit="enterForm()" method="post" >
+		Distance Traveled: <input type="number" name="distance">
+		Gas Mileage: <input type="number" name="mileage">
+		Number of Passengers: <input type="number" name="passengers">
+		Gas Price: <input type="number" name="gasPrice">
+		<input type="submit" value="Submit">
+	</form>
+
+      <a class="btn btn-large btn-sucess" onclick="enterForm()">Press Here</a>
+      <script>
+	function calculateCosts() {
+		distance = document.forms["Input"]["distance"].value;
+		mileage = document.forms["Input"]["mileage"].value;
+		passengers = document.forms["Input"]["passengers"].value;
+		gasPrice = document.forms["Input"]["gasPrice"].value;
+		return distance/mileage * gasPrice / passengers; 
+	}
+      	function enterForm() { 
+		alert('The trip will cost $' + calculateCosts() + '.');
+	}
+      </script>
+
       </div>
 
       <hr>
