@@ -6,3 +6,5 @@ Developers:
 * [Dawson Botsford](https://github.com/dawsonbotsford) 
 * [Adrian Chen](https://github.com/adrian-chen)
 * [Brian Newsom](https://github.com/BrianNewsom)
+
+<sup> profile image from www.freedigitalphotos.net </sup>
