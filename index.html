@@ -126,13 +126,13 @@
 	<hr>	
 	<form name="Input" onsubmit="enterForm()" method="post" >
 		Distance Traveled: <input type="number" name="distance" step="any" min="0"> Miles <br>
-		Gas Mileage: <input type="number" name="mileage" step="any" min="0"> Miles/Gallon <br>
+		Gas Mileage: <input type="number" name="mileage" step="any" min="1"> Miles/Gallon <br>
 		Number of Passengers: <input type="number" name="passengers" min="1"> Passengers <br>
 		Gas Price: <input type="number" name="gasPrice" step="any" min="0"> US Dollars / Gallon <br>
 		<!-- <input type="submit" value="Submit"> Use for default button -->
 	</form>
       <a class="btn btn-large btn-sucess" onclick="enterForm()">Pay Up!</a>
-	<p id="returnVal">Return here</p>
+	<p id="returnVal"></p>
       <script>
 	function calculateCosts() {
 		distance = document.forms["Input"]["distance"].value;
