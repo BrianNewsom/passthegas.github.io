@@ -132,6 +132,7 @@
 		<!-- <input type="submit" value="Submit"> Use for default button -->
 	</form>
       <a class="btn btn-large btn-sucess" onclick="enterForm()">Pay Up!</a>
+	<p id="returnVal">Return here</p>
       <script>
 	function calculateCosts() {
 		distance = document.forms["Input"]["distance"].value;
@@ -143,7 +144,7 @@
 		return rounded;
 	}
       	function enterForm() { 
-		alert('This trip costs $' + calculateCosts() + ' per person.');
+		$('#returnVal').text('This trip costs $' + calculateCosts() + ' per person.');
 	}
       </script>
 
@@ -181,7 +182,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap-transition.js"></script>
     <script src="./js/bootstrap-alert.js"></script>
     <script src="./js/bootstrap-modal.js"></script>
