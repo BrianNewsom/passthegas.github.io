@@ -1,4 +1,4 @@
-passthegas
+PassTheGas
 ==========
 Simple, beautiful gas cost splitting application featuring full fledged Google Maps integration.
 
