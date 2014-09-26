@@ -82,38 +82,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
   <body>
     <div id="panel">
-    <b>Start: </b>
-    <select id="start" onchange="calcRoute(); calcDistance();">
-      <option value="chicago, il">Chicago</option>
-      <option value="st louis, mo">St Louis</option>
-      <option value="joplin, mo">Joplin, MO</option>
-      <option value="oklahoma city, ok">Oklahoma City</option>
-      <option value="amarillo, tx">Amarillo</option>
-      <option value="gallup, nm">Gallup, NM</option>
-      <option value="flagstaff, az">Flagstaff, AZ</option>
-      <option value="winona, az">Winona</option>
-      <option value="kingman, az">Kingman</option>
-      <option value="barstow, ca">Barstow</option>
-      <option value="san bernardino, ca">San Bernardino</option>
-      <option value="los angeles, ca">Los Angeles</option>
-      <option value="boulder, co">Boulder</option>
-    </select>
-    <b>End: </b>
-    <select id="end" onchange="calcRoute(); calcDistance();">
-      <option value="chicago, il">Chicago</option>
-      <option value="st louis, mo">St Louis</option>
-      <option value="joplin, mo">Joplin, MO</option>
-      <option value="oklahoma city, ok">Oklahoma City</option>
-      <option value="amarillo, tx">Amarillo</option>
-      <option value="gallup, nm">Gallup, NM</option>
-      <option value="flagstaff, az">Flagstaff, AZ</option>
-      <option value="winona, az">Winona</option>
-      <option value="kingman, az">Kingman</option>
-      <option value="barstow, ca">Barstow</option>
-      <option value="san bernardino, ca">San Bernardino</option>
-      <option value="los angeles, ca">Los Angeles</option>
-      <option value="boulder, co">Boulder</option>
-    </select>
+    <form name="form" method="post">
+	    <b>Start: </b>
+	    <input type="text" id="start" name="start">
+	    <b> End: </b> 
+	    <input type="text" id="end" name="end"> 
+	    <input type="button" value="Go!" onclick="calcDistance(); calcRoute();">
+    </form>
     </div>
     <div id="map-canvas"></div>
     <p id="distanceOutput"> test text </p>
