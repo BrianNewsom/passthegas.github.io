@@ -13,6 +13,8 @@ function calculateCosts() {
 	return rounded;
 }
 function enterForm() { 
-	$('#returnVal').text('This trip costs $' + calculateCosts() + ' per person.');
+	cost = calculateCosts()
+	if(isFinite(cost))
+		$('#returnVal').text('This trip costs $' + cost + ' per person.');
 }
 

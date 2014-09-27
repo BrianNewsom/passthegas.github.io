@@ -17,12 +17,11 @@
 		<form name="Input" method="post" >
 			<input type="text" id="start" placeholder="Start" name="start" value="fort collins,co">
 			<input type="text" id="end" placeholder="End" name="end" value="boulder, co" onchange="calcDistance();"> <br>
-			<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0"> Kilometers <br>
-			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1"> Kilometers/Gallon <br>
-			<input type="number" name="passengers" placeholder="Number of Passengers" min="1"> Passengers <br>
-			<input type="number" name="gasPrice" placeholder="Gas Price" step="any" min="0"> US Dollars / Gallon <br>
+			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1" onchange="enterForm();"> Kilometers/Gallon <br>
+			<input type="number" name="passengers" placeholder="Number of Passengers" min="1" onchange="enterForm();"> Passengers <br>
+			<input type="number" name="gasPrice" placeholder="Gas Price" step="any" min="0" onchange="enterForm();"> US Dollars / Gallon <br>
+			<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0" onchange="enterForm();"> Kilometers <br>
 		</form>
-	<a class="btn btn-large btn-sucess" onclick="calcDistance(); enterForm()">Pay Up!</a>
 	<p id="returnVal"></p>
 	</div>
 	<div class="footer">
