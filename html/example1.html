@@ -19,6 +19,7 @@
         background-color: #fff;
         padding: 5px;
         border: 1px solid #999;
+	opacity: .85;
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -89,9 +90,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	    <input type="text" id="end" name="end"> 
 	    <input type="button" value="Go!" onclick="calcDistance(); calcRoute();">
     </form>
+    <center> <p id="distanceOutput"> </p> </center>
     </div>
     <div id="map-canvas"></div>
-    <p id="distanceOutput"> test text </p>
   </body>
 </html>
 
