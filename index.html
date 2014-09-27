@@ -15,15 +15,16 @@
   <body>
 	<div class="form">
 		<form name="Input" method="post" >
-			Distance Traveled: <input type="number" name="distance" step="any" min="0"> Miles <br>
-			Gas Mileage: <input type="number" name="mileage" step="any" min="1"> Miles/Gallon <br>
-			Number of Passengers: <input type="number" name="passengers" min="1"> Passengers <br>
-			Gas Price: <input type="number" name="gasPrice" step="any" min="0"> US Dollars / Gallon <br>
+			<input type="text" id="start" placeholder="Start" name="start" value="fort collins,co">
+			<input type="text" id="end" placeholder="End" name="end" value="boulder, co" onchange="calcDistance();"> <br>
+			<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0"> Kilometers <br>
+			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1"> Kilometers/Gallon <br>
+			<input type="number" name="passengers" placeholder="Number of Passengers" min="1"> Passengers <br>
+			<input type="number" name="gasPrice" placeholder="Gas Price" step="any" min="0"> US Dollars / Gallon <br>
 		</form>
-	<a class="btn btn-large btn-sucess" onclick="enterForm()">Pay Up!</a>
+	<a class="btn btn-large btn-sucess" onclick="calcDistance(); enterForm()">Pay Up!</a>
 	<p id="returnVal"></p>
 	</div>
-
 	<div class="footer">
         	<p>&copy; PassTheGas 2014</p>
 	</div>
@@ -32,6 +33,8 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script src="./js/mapHandler.js"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/formHandling.js"></script>
   </body>
