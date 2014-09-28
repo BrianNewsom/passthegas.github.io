@@ -1,7 +1,7 @@
-var directionsDisplay;
+//var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
-var map;
-
+//var map;
+/*
 function initialize() {
   directionsDisplay = new google.maps.DirectionsRenderer();
   var chicago = new google.maps.LatLng(41.850033, -87.6500523);
@@ -27,7 +27,7 @@ function calcRoute() {
     }
   });
 }
-
+*/
 function calcDistance() {
 	var start = document.getElementById('start').value;
 	var end = document.getElementById('end').value;
@@ -50,4 +50,4 @@ function calcDistance() {
 	});
 }	
 
-google.maps.event.addDomListener(window, 'load', initialize);
+//google.maps.event.addDomListener(window, 'load', initialize);
