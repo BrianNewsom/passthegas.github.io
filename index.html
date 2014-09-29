@@ -15,7 +15,7 @@
   <body>
 	<div class="form">
 		<form name="Input" method="post" >
-			<input type="text" id="start" placeholder="Start" name="start" value="fort collins,co">
+			<input type="text" id="start" placeholder="Start" name="start" value="fort collins,co", onchange="calcDistance();">
 			<input type="text" id="end" placeholder="End" name="end" value="boulder, co" onchange="calcDistance();"> <br>
 			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1" onchange="enterForm();"> Kilometers/Gallon <br>
 			<input type="number" name="passengers" placeholder="Number of Passengers" min="1" onchange="enterForm();"> Passengers <br>
