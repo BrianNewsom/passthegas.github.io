@@ -9,24 +9,32 @@
     <meta name="author" content="">
     <!-- Le styles -->
     <link href="./css/bootstrap.css" rel="stylesheet">
-    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
   </head>
 
   <body>
   	<center> <h1> PassTheGas </h1> <center>
-	<center> <h3> Finally, a way to split gas costs with friends </h3> </center>
+	<center> <h4> Finally, a way to split gas costs with friends </h4> </center>
   	<center>
-		<div class="form">
-			<form name="Input" method="post" >
-				<input type="text" id="start" placeholder="Start" name="start" value="fort collins,co", onchange="calcDistance();">
-				<input type="text" id="end" placeholder="End" name="end" value="boulder, co" onchange="calcDistance();"> <br>
-				<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1" onchange="enterForm();"> Kilometers/Gallon <br>
-				<input type="number" name="passengers" placeholder="Number of Passengers" min="1" onchange="enterForm();"> Passengers <br>
-				<input type="number" name="gasPrice" placeholder="Gas Price" step="any" min="0" onchange="enterForm();"> US Dollars / Gallon <br>
-				<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0" onchange="enterForm();"> Kilometers <br>
-			</form>
-		</div>
-		<p id="returnVal"></p>
+	<div class="form">
+		<form name="Input" method="post" >
+			<input type="text" id="start" placeholder="Start" name="start" , onchange="enterForm();">
+		        <input type="text" id="end" placeholder="End" name="end" onchange="enterForm();"> 
+			<br>	
+			<p> Units: 	
+			<select class="form-control">
+				<option>Miles</option>
+				<option>Kilometers</option>
+			</select>
+			</p>
+
+			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1" oninput="enterForm();"> Miles/Gallon <br>
+			<input type="number" name="passengers" placeholder="Number of Passengers" min="1" oninput="enterForm();"> Passengers <br>
+			<input type="number" name="gasPrice" placeholder="Gas Price" step="any" min="0" oninput="enterForm();"> US Dollars / Gallon <br>
+			<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0" oninput="enterForm();"> Miles <br>
+		</form>
+	<p id="returnVal"></p>
+	</div>
 	</center>
 	<div class="footer">
         	<p>&copy; PassTheGas 2014</p>
@@ -35,7 +43,6 @@
 
     <!-- Place imports at the end of the document so the pages load faster -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-	<script src="./js/mapHandler.js"></script>
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/formHandling.js"></script>
   </body>
