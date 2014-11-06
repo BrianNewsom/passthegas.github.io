@@ -29,15 +29,11 @@ function calcRoute() {
       destination:end,
       travelMode: google.maps.TravelMode.DRIVING
   };
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    }
+  directionsService.route(request, function(response, status) { if (status == google.maps.DirectionsStatus.OK) { directionsDisplay.setDirections(response); }
   });
 }
 */
 function calcDistance(start, end) {
-  alert("CALLING MAPS YO");
   startGlobal = start;
   endGlobal = end;
   var request = {
@@ -48,28 +44,34 @@ function calcDistance(start, end) {
   };
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
-      var totalDistance = 0;
+      var meterDistance = 0;
       var legs = response.routes[0].legs;
       for (var i=0; i < legs.length; ++i){
-        totalDistance += legs[i].distance.value;
+        meterDistance += legs[i].distance.value;
       }
-      alert("distance km" + totalDistance);
-
-      //$('#distanceOutput').text('test');//totalDistance);
+      var kilometerDistance = meterDistance / 1000;
+      var mileDistance = toMiles(kilometerDistance);
+      
       var distance = document.getElementById('distance');
-      distance.value = Math.round(totalDistance / 1000);
+      if (document.getElementById('units').value == "Kilometers"){
+        distance.value = Math.round(kilometerDistance);
+      }
+      else {
+        distance.value = Math.round(mileDistance);
+      }
     }
   });
 } 
 
+//Take km as input and return miles
+function toMiles(kminput){
+  return kminput * .621371;
+}
 
-$('kmbox').click(function() {
-  if (($this).is(':checked')){
-    alert("checked");
-  } else {
-    alert("UN");
-  }
-});
+//take in distance and update distance html id
+function updateDistance() {
+  document.getElementById('distance').value = document.getElementById('units').value;
+}
 //google.maps.event.addDomListener(window, 'load', initialize);
 
 function calculateCosts() {
@@ -81,12 +83,11 @@ function calculateCosts() {
 	rounded = Math.round(unRounded * 100) / 100;
 	return rounded;
 }
+
 function enterForm() { 
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
-  
-  if (start != startGlobal || end != endGlobal)
-    calcDistance(start,end);   
+  calcDistance(start,end);   
 	cost = calculateCosts()
 	if(isFinite(cost) && cost != 0)
 		$('#returnVal').text('This trip costs $' + cost + ' per person.');

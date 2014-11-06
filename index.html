@@ -22,7 +22,7 @@
 		        <input type="text" id="end" placeholder="End" name="end" onchange="enterForm();"> 
 			<br>	
 			<p> Units: 	
-			<select class="form-control">
+			<select id="units" class="form-control" onchange="enterForm();">
 				<option>Miles</option>
 				<option>Kilometers</option>
 			</select>
@@ -39,7 +39,6 @@
 	<div class="footer">
         	<p>&copy; PassTheGas 2014</p>
 	</div>
-
 
     <!-- Place imports at the end of the document so the pages load faster -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
