@@ -7,7 +7,7 @@ src="./js/jquery.min.js";
 var directionsService = new google.maps.DirectionsService();
 var startGlobal;
 var endGlobal;
-
+var unitsGlobal;
 //var map;
 /*
 function initialize() {
@@ -33,7 +33,7 @@ function calcRoute() {
   });
 }
 */
-function calcDistance(start, end) {
+function calcDistance(start, end, units) {
   startGlobal = start;
   endGlobal = end;
   var request = {
@@ -53,12 +53,15 @@ function calcDistance(start, end) {
       var mileDistance = toMiles(kilometerDistance);
       
       var distance = document.getElementById('distance');
-      if (document.getElementById('units').value == "Kilometers"){
+      if ((unitsGlobal = units) == "Kilometers"){
         distance.value = Math.round(kilometerDistance);
       }
       else {
         distance.value = Math.round(mileDistance);
       }
+    }
+    else{
+      // Some sort of error handling
     }
   });
 } 
@@ -69,8 +72,11 @@ function toMiles(kminput){
 }
 
 //take in distance and update distance html id
-function updateDistance() {
-  document.getElementById('distance').value = document.getElementById('units').value;
+function updateUnits() {
+  document.getElementById('unitspgallon').innerHTML = document.getElementById('units').value + "/Gallon";
+  document.getElementById('unitsdistance').innerHTML = document.getElementById('units').value;
+  enterForm();
+  return;
 }
 //google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -87,8 +93,12 @@ function calculateCosts() {
 function enterForm() { 
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
-  calcDistance(start,end);   
-	cost = calculateCosts()
+  var units = document.getElementById('units').value;
+  // Only call api if both exist & >0 changed since last call
+  if((start && end) && ((start != startGlobal)||(end !=endGlobal)||(units != unitsGlobal))){
+    calcDistance(start,end,units);   
+	}
+  cost = calculateCosts();
 	if(isFinite(cost) && cost != 0)
 		$('#returnVal').text('This trip costs $' + cost + ' per person.');
 }

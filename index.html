@@ -22,16 +22,16 @@
 		        <input type="text" id="end" placeholder="End" name="end" onkeypress="enterForm();"> 
 			<br>	
 			<p> Units: 	
-			<select id="units" class="form-control" onchange="enterForm();">
+			<select id="units" class="form-control" onchange="updateUnits();">
 				<option>Miles</option>
 				<option>Kilometers</option>
 			</select>
 			</p>
 
-			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1" oninput="enterForm();"> Miles/Gallon <br>
+			<input type="number" name="mileage" placeholder="Gas Mileage" step="any" min="1" oninput="enterForm();"> <p style="display:inline" id="unitspgallon"> Miles/Gallon </p> <br>
 			<input type="number" name="passengers" placeholder="Number of Passengers" min="1" oninput="enterForm();"> Passengers <br>
 			<input type="number" name="gasPrice" placeholder="Gas Price" step="any" min="0" oninput="enterForm();"> US Dollars / Gallon <br>
-			<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0" oninput="enterForm();"> Miles <br>
+			<input type="number" id="distance" name="distance" placeholder="Distance" step="any" min="0" oninput="enterForm();"> <p style="display:inline" id="unitsdistance"> Miles </p> <br>
 		</form>
 	<p id="returnVal"></p>
 	</div>
