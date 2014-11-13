@@ -3,7 +3,6 @@
 // Date: 9/24/2014
 // Javascript handler for html form element in index.html
 //var directionsDisplay;
-src="./js/jquery.min.js";
 var directionsService = new google.maps.DirectionsService();
 var startGlobal;
 var endGlobal;
