@@ -79,6 +79,21 @@ function updateUnits() {
 }
 //google.maps.event.addDomListener(window, 'load', initialize);
 
+function changeUnits() {
+  if(document.getElementById('unitbtn').innerHTML == "Imperial"){
+    document.getElementById('mileage').placeholder = "Gas Milage (km/l)";
+    document.getElementById('unitbtn').innerHTML = "Metric";
+    document.getElementById('gasPrice').placeholder = "Gas Price (per Liter)";
+    document.getElementById('distance').placeholder = "Distance (km)";
+  }
+  else {
+    document.getElementById('mileage').placeholder = "Gas Milage (mi/gal)";
+    document.getElementById('unitbtn').innerHTML = "Imperial";
+    document.getElementById('gasPrice').placeholder = "Gas Price (per Gallon)";
+    document.getElementById('distance').placeholder = "Distance (mi)";
+  }
+}
+
 function calculateCosts() {
 	distance = document.forms["Input"]["distance"].value;
 	mileage = document.forms["Input"]["mileage"].value;
