@@ -52,7 +52,7 @@ function calcDistance(start, end, units) {
       var mileDistance = toMiles(kilometerDistance);
       
       var distance = document.getElementById('distance');
-      if ((unitsGlobal = units) == "Kilometers"){
+      if ((unitsGlobal = units) == "Metric"){
         distance.value = Math.round(kilometerDistance);
       }
       else {
@@ -81,24 +81,27 @@ function updateUnits() {
 
 function changeUnits() {
   if(document.getElementById('unitbtn').innerHTML == "Imperial"){
-    document.getElementById('mileage').placeholder = "Gas Milage (km/l)";
+    document.getElementById('mileage').placeholder = "Gas Mileage (km/l)";
     document.getElementById('unitbtn').innerHTML = "Metric";
     document.getElementById('gasPrice').placeholder = "Gas Price (per Liter)";
     document.getElementById('distance').placeholder = "Distance (km)";
+    calcDistance(startGlobal,endGlobal,"Metric");
   }
   else {
-    document.getElementById('mileage').placeholder = "Gas Milage (mi/gal)";
+    document.getElementById('mileage').placeholder = "Gas Mileage (mi/gal)";
     document.getElementById('unitbtn').innerHTML = "Imperial";
     document.getElementById('gasPrice').placeholder = "Gas Price (per Gallon)";
     document.getElementById('distance').placeholder = "Distance (mi)";
+    calcDistance(startGlobal,endGlobal,"Imperial");
   }
+
 }
 
 function calculateCosts() {
-	distance = document.forms["Input"]["distance"].value;
-	mileage = document.forms["Input"]["mileage"].value;
-	passengers = document.forms["Input"]["passengers"].value;
-	gasPrice = document.forms["Input"]["gasPrice"].value;
+	distance = document.getElementById('distance').value;
+	mileage = document.getElementById('mileage').value;
+	passengers = document.getElementById('passengers').value;
+	gasPrice = document.getElementById('gasPrice').value;
 	unRounded = distance/mileage * gasPrice / passengers; 
 	rounded = Math.round(unRounded * 100) / 100;
 	return rounded;
@@ -107,7 +110,7 @@ function calculateCosts() {
 function enterForm() { 
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
-  var units = document.getElementById('units').value;
+  var units = document.getElementById('unitbtn').innerHTML;
   // Only call api if both exist & >0 changed since last call
   if((start && end) && ((start != startGlobal)||(end !=endGlobal)||(units != unitsGlobal))){
     calcDistance(start,end,units);   
