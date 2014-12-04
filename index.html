@@ -17,7 +17,16 @@
   </head>
 
   <body>
-  	<center> <h1> PassTheGas </h1> <center>
+  	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<center> <h1> PassTheGas </h1> <center>
 	<center> <h4> Finally, a way to split gas costs with friends. </h4> </center>
 	<div class="container">
 		<div class="row blank-space">
@@ -66,18 +75,22 @@
 			</div>
 		</div>
 		<p id="returnVal"></p>
-	</div>
-
-    <!-- Place imports at the end of the document so the pages load faster -->
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<center>
+			<div class="fb-like" data-href="https://passthegas.github.io" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+			<br><br>
+			<g:plusone></g:plusone>
+		</center>
+    	</div>
+    <!-- Place imports at the end of the document so the pages load faster
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
     <!-- Autocomplete js files -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
   	<script src="./js/autocomplete.js"></script>
 	<script src="./js/formHandling.js"></script>
   </body>
 	<div class="footer">
-    <div class="container">
-        	<p>&copy; PassTheGas 2014 | <a href="./html/howto.html"> HowTo </a> | <a href="./html/contact.html">Contact </a> | <a href="./html/legal.html">Legal</a></p>
-    </div>
+		<div class="container">
+        		<p>&copy; PassTheGas 2014 | <a href="./html/howto.html"> HowTo </a> | <a href="./html/contact.html">Contact </a> | <a href="./html/legal.html">Legal</a></p>
+    		</div>
 	</div>
 </html>
