@@ -20,37 +20,49 @@
   	<center> <h1> PassTheGas </h1> <center>
 	<center> <h4> Finally, a way to split gas costs with friends. </h4> </center>
 	<div class="container">
-		<div class="row">
+		<div class="row blank-space">
 			<div class="col-lg-4 col-lg-offset-2 col-xs-6 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2">
-				<input type="text" class="form-control" id="start" placeholder="Start" name="start" , onkeypress="enterForm();">
+				<input type="text" class="form-control input-lg" id="start" placeholder="Start Location" name="start" , onkeypress="enterForm();">
 			</div>
 			<div class="col-lg-4 col-xs-6 col-sm-5 col-md-4">
-				<input type="text" class="form-control" id="end" placeholder="End" name="end" onkeypress="enterForm();"> 
+				<input type="text" class="form-control input-lg" id="end" placeholder="End Location" name="end" onkeypress="enterForm();"> 
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-				<input type="number" class="form-control" id="mileage" name="mileage" placeholder="Gas Mileage (mi/gal)" step="any" min="1" oninput="enterForm();">
+		<div class="row sm-blank-space">
+			<div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5 col-xs-4 col-xs-offset-4">
+				<button type="button" class="btn btn-default" id="unitbtn" onclick="changeUnits();">Imperial</button>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row sm-blank-space">
 			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-				<input type="number" class="form-control" id="passengers" name="passengers" placeholder="Number of Passengers" min="1" oninput="enterForm();">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-				<input type="number" class="form-control" id="gasPrice" name="gasPrice" placeholder="Gas Price (per Gallon)" step="any" min="0" oninput="enterForm();">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-			<div class="input-group">
-				<input type="number" class="form-control" id="distance" name="distance" placeholder="Distance (mi)" step="any" min="0" oninput="enterForm();">
-				<div class="input-group-btn">
-					<button type="button" class="btn btn-default" id="unitbtn" onclick="changeUnits();">Imperial</button>
+				<div class="input-group">
+					<input type="number" class="form-control" id="mileage" name="mileage" placeholder="Gas Mileage" step="any" min="1" oninput="enterForm();">
+					<span class="input-group-addon" id="mileage_btn">mi/gal</span>
 				</div>
 			</div>
+		</div>
+		<div class="row sm-blank-space">
+			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+				<div class="input-group">
+					<input type="number" class="form-control" id="passengers" name="passengers" placeholder="Number of Passengers" min="1" oninput="enterForm();">
+					<span class="input-group-addon">Passengers</span>
+				</div>
+			</div>
+		</div>
+		<div class="row sm-blank-space">
+			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+				<div class="input-group">
+					<input type="number" class="form-control" id="gasPrice" name="gasPrice" placeholder="Gas Price" step="any" min="0" oninput="enterForm();">
+					<span class="input-group-addon" id="gas_btn">per Gallon</span>
+				</div>
+			</div>
+		</div>
+		<div class="row sm-blank-space">
+			<div class="col-lg-4 col-lg-offset-4 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+				<div class="input-group">
+					<input type="number" class="form-control" id="distance" name="distance" placeholder="Distance" step="any" min="0" oninput="enterForm();">
+					<span class="input-group-addon" id="distance_btn">mi</span>
+				</div>
 			</div>
 		</div>
 		<p id="returnVal"></p>

@@ -81,17 +81,17 @@ function updateUnits() {
 
 function changeUnits() {
   if(document.getElementById('unitbtn').innerHTML == "Imperial"){
-    document.getElementById('mileage').placeholder = "Gas Mileage (km/l)";
+    document.getElementById('mileage_btn').innerHTML = "km/l";
     document.getElementById('unitbtn').innerHTML = "Metric";
-    document.getElementById('gasPrice').placeholder = "Gas Price (per Liter)";
-    document.getElementById('distance').placeholder = "Distance (km)";
+    document.getElementById('gas_btn').innerHTML = "per Liter";
+    document.getElementById('distance_btn').innerHTML = "km";
     calcDistance(startGlobal,endGlobal,"Metric");
   }
-  else {
-    document.getElementById('mileage').placeholder = "Gas Mileage (mi/gal)";
+  else { 
     document.getElementById('unitbtn').innerHTML = "Imperial";
-    document.getElementById('gasPrice').placeholder = "Gas Price (per Gallon)";
-    document.getElementById('distance').placeholder = "Distance (mi)";
+    document.getElementById('mileage_btn').innerHTML = "mi/gal";
+    document.getElementById('distance_btn').innerHTML = "mi";
+    document.getElementById('gas_btn').innerHTML = "per Gallon";
     calcDistance(startGlobal,endGlobal,"Imperial");
   }
 
@@ -110,7 +110,7 @@ function calculateCosts() {
 function enterForm() { 
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
-  var units = document.getElementById('unitbtn').innerHTML;
+  var units = document.getElementById('distance_btn').innerHTML;
   // Only call api if both exist & >0 changed since last call
   if((start && end) && ((start != startGlobal)||(end !=endGlobal)||(units != unitsGlobal))){
     calcDistance(start,end,units);   

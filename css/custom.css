@@ -10,3 +10,15 @@ div.footer{
   left: 100px;
   height: 30px;
 }
+
+.custom-width{
+  width: 100% !important;
+}
+
+.blank-space{
+  padding-bottom: 9%;
+}
+
+.sm-blank-space{
+  padding-bottom: 1%;
+}
