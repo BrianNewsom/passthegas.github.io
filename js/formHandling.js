@@ -50,20 +50,23 @@ function calcDistance(start, end, units) {
       }
       var kilometerDistance = meterDistance / 1000;
       var mileDistance = toMiles(kilometerDistance);
-      
+
       var distance = document.getElementById('distance');
       if ((unitsGlobal = units) == "Metric"){
         distance.value = Math.round(kilometerDistance);
+        return Math.round(kilometerDistance);
       }
       else {
         distance.value = Math.round(mileDistance);
+        return Math.round(mileDistance);
       }
     }
     else{
       // Some sort of error handling
+      return 0;
     }
   });
-} 
+}
 
 //Take km as input and return miles
 function toMiles(kminput){
@@ -87,7 +90,7 @@ function changeUnits() {
     document.getElementById('distance_btn').innerHTML = "km";
     calcDistance(startGlobal,endGlobal,"Metric");
   }
-  else { 
+  else {
     document.getElementById('unitbtn').innerHTML = "Imperial";
     document.getElementById('mileage_btn').innerHTML = "mi/gal";
     document.getElementById('distance_btn').innerHTML = "mi";
@@ -102,18 +105,18 @@ function calculateCosts() {
 	mileage = document.getElementById('mileage').value;
 	passengers = document.getElementById('passengers').value;
 	gasPrice = document.getElementById('gasPrice').value;
-	unRounded = distance/mileage * gasPrice / passengers; 
+	unRounded = distance/mileage * gasPrice / passengers;
 	rounded = Math.round(unRounded * 100) / 100;
 	return rounded;
 }
 
-function enterForm() { 
+function enterForm() {
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
   var units = document.getElementById('distance_btn').innerHTML;
   // Only call api if both exist & >0 changed since last call
   if((start && end) && ((start != startGlobal)||(end !=endGlobal)||(units != unitsGlobal))){
-    calcDistance(start,end,units);   
+    calcDistance(start,end,units);
 	}
   cost = calculateCosts();
 	if(isFinite(cost) && cost != 0)
