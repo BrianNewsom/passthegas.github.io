@@ -37,7 +37,6 @@ function getFieldsAsJSON(){
     var returnJSONObj = {"start" : start, "end" : end, "distance" : distance + ' ' + distanceUnits,
         "mileage" : mileage + ' ' + mileageUnits, "passengers" : passengers, "gasPrice": gasPrice + ' ' + gasPriceUnits
     }
-    console.log(returnJSONObj);
 
     return returnJSONObj;
 }
