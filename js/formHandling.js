@@ -119,7 +119,10 @@ function enterForm() {
     calcDistance(start,end,units);
 	}
   cost = calculateCosts();
-	if(isFinite(cost) && cost != 0)
-		$('#returnVal').text('This trip costs $' + cost + ' per person.');
+	if(isFinite(cost) && cost != 0){
+        $('#returnVal').text('This trip costs $' + cost + ' per person.');
+        //Since we have succesful data, store in DB
+        storeEntry();
+    }
 }
 
