@@ -15,4 +15,5 @@ This code uses [Dalek](http://dalekjs.com/) for automated JS and HTML testing.  
 * $ npm install dalekjs --save-dev
 * $ dalek test/dalekTests.js
 This will start the run script and it will run all unit tests automatically! How cool!
+
 <sup> profile image from www.freedigitalphotos.net </sup>
