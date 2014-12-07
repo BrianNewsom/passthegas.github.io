@@ -4,6 +4,7 @@ Parse.initialize("9JEGewyTvyyfbwrupDZ86K784uDoA43x4x68e9fw", "o6arckH86PkZXq7smh
 
 
 function storeEntry() {
+    // Store individual entry of passthegas submission - called each complete input
     var Entry = Parse.Object.extend("Entry");
     var entry = new Entry();
 
@@ -14,6 +15,7 @@ function storeEntry() {
 }
 
 function getFieldsAsJSON(){
+    // Generates JSON object for storeEntry to store in parse;
     var start = document.getElementById('start').value;
     var end = document.getElementById('end').value;
     var distance = document.getElementById('distance').value;
