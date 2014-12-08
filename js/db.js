@@ -22,7 +22,7 @@ function storeEntry() {
     });
 }
 
-//Helper function to retrieve values from the form elements
+//Helper function to retrieve values from the form elements, returns a JSON object
 function getFieldsAsJSON(){
     var start = document.getElementById('start').value;
     var end = document.getElementById('end').value;
@@ -45,6 +45,7 @@ function getFieldsAsJSON(){
         mileageUnits = "mi/g";
         gasPriceUnits = "Per Gallon";
     }
+    //put the data in JSON format
     var returnJSONObj = {"start" : start, "end" : end, "distance" : distance + ' ' + distanceUnits,
         "mileage" : mileage + ' ' + mileageUnits, "passengers" : passengers, "gasPrice": gasPrice + ' ' + gasPriceUnits
     }

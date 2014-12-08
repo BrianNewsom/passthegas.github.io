@@ -1,11 +1,10 @@
-// formHandling.js
+//Javascript handler for html form element in index.html
+//======================================================
+//formHandling.js
+//---------------
+//Authors: Brian Newsom, Adrian Chen
 
-// Authors: Brian Newsom, Adrian Chen
-
-// Date: 9/24/2014
-
-// Javascript handler for html form element in index.html
-// ------------------------------------------------------
+//Date: 9/24/2014
 
 var directionsService = new google.maps.DirectionsService();
 var startGlobal;
@@ -43,7 +42,7 @@ function calcDistance(start, end, units) {
       }
     }
     else{
-      // Some sort of error handling
+      // If an error occurred, return 0
       return 0;
     }
   });
@@ -78,10 +77,9 @@ function changeUnits() {
     document.getElementById('gas_btn').innerHTML = "per Gallon";
     calcDistance(startGlobal,endGlobal,"Imperial");
   }
-
 }
 
-//Helper function to get input values and return the price split value
+//Helper function to retieve input values and return the price split value
 function calculateCosts() {
 	distance = document.getElementById('distance').value;
 	mileage = document.getElementById('mileage').value;

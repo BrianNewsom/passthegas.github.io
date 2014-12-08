@@ -114,7 +114,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p>Helper function to retrieve values from the form elements</p>
+              <p>Helper function to retrieve values from the form elements, returns a JSON object</p>
 
             </div>
             
@@ -151,8 +151,22 @@
         distanceUnits = <span class="hljs-string">"mi"</span>;
         mileageUnits = <span class="hljs-string">"mi/g"</span>;
         gasPriceUnits = <span class="hljs-string">"Per Gallon"</span>;
-    }
-    <span class="hljs-keyword">var</span> returnJSONObj = {<span class="hljs-string">"start"</span> : start, <span class="hljs-string">"end"</span> : end, <span class="hljs-string">"distance"</span> : distance + <span class="hljs-string">' '</span> + distanceUnits,
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>put the data in JSON format</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> returnJSONObj = {<span class="hljs-string">"start"</span> : start, <span class="hljs-string">"end"</span> : end, <span class="hljs-string">"distance"</span> : distance + <span class="hljs-string">' '</span> + distanceUnits,
         <span class="hljs-string">"mileage"</span> : mileage + <span class="hljs-string">' '</span> + mileageUnits, <span class="hljs-string">"passengers"</span> : passengers, <span class="hljs-string">"gasPrice"</span>: gasPrice + <span class="hljs-string">' '</span> + gasPriceUnits
     }
 
