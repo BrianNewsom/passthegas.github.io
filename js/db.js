@@ -1,8 +1,17 @@
+//Database setup and data collection
+//==================================
+//db.js
+//-----
+//Author: Brian Newsom
+
+//Date created: 12/7/2014
+
 // Initialize parse db with our app id
 Parse.initialize("9JEGewyTvyyfbwrupDZ86K784uDoA43x4x68e9fw", "o6arckH86PkZXq7smh21jZtrYzkfDxf4JlJVpYs3");
 
 
-
+// Stores all the fields in the PARSE database.
+// * Data is stored in JSON format
 function storeEntry() {
     var Entry = Parse.Object.extend("Entry");
     var entry = new Entry();
@@ -13,6 +22,7 @@ function storeEntry() {
     });
 }
 
+//Helper function to retrieve values from the form elements
 function getFieldsAsJSON(){
     var start = document.getElementById('start').value;
     var end = document.getElementById('end').value;
@@ -24,6 +34,7 @@ function getFieldsAsJSON(){
     var mileageUnits = '';
     var gasPriceUnits = '';
 
+//Checking for units
     if ((unitsGlobal) == "Metric"){
         distanceUnits = "km";
         mileageUnits = "km/l";

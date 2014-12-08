@@ -1,37 +1,18 @@
 // formHandling.js
-// Author: Brian Newsom
+
+// Authors: Brian Newsom, Adrian Chen
+
 // Date: 9/24/2014
+
 // Javascript handler for html form element in index.html
-//var directionsDisplay;
+// ------------------------------------------------------
+
 var directionsService = new google.maps.DirectionsService();
 var startGlobal;
 var endGlobal;
 var unitsGlobal;
-//var map;
-/*
-function initialize() {
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  var chicago = new google.maps.LatLng(41.850033, -87.6500523);
-  var mapOptions = {
-    zoom:7,
-    center: chicago
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  directionsDisplay.setMap(map);
-}
 
-function calcRoute() {
-  var start = document.getElementById('start').value;
-  var end = document.getElementById('end').value;
-  var request = {
-      origin:start,
-      destination:end,
-      travelMode: google.maps.TravelMode.DRIVING
-  };
-  directionsService.route(request, function(response, status) { if (status == google.maps.DirectionsStatus.OK) { directionsDisplay.setDirections(response); }
-  });
-}
-*/
+//Calculate the distance by splitting the journey into its various legs and adding them together
 function calcDistance(start, end, units) {
   startGlobal = start;
   endGlobal = end;
@@ -73,15 +54,15 @@ function toMiles(kminput){
   return kminput * .621371;
 }
 
-//take in distance and update distance html id
+//Take in distance and update distance html id
 function updateUnits() {
   document.getElementById('unitspgallon').innerHTML = document.getElementById('units').value + "/Gallon";
   document.getElementById('unitsdistance').innerHTML = document.getElementById('units').value;
   enterForm();
   return;
 }
-//google.maps.event.addDomListener(window, 'load', initialize);
 
+//Swap between Imperial and Metric systems
 function changeUnits() {
   if(document.getElementById('unitbtn').innerHTML == "Imperial"){
     document.getElementById('mileage_btn').innerHTML = "km/l";
@@ -100,6 +81,7 @@ function changeUnits() {
 
 }
 
+//Helper function to get input values and return the price split value
 function calculateCosts() {
 	distance = document.getElementById('distance').value;
 	mileage = document.getElementById('mileage').value;
@@ -110,6 +92,7 @@ function calculateCosts() {
 	return rounded;
 }
 
+//Compute calculations and generate output
 function enterForm() {
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
