@@ -1,6 +1,12 @@
 PassTheGas
 ==========
-Simple, beautiful gas cost splitting application featuring full fledged Google Maps integration.
+Simple, beautiful gas cost splitting application featuring full fledged Google Maps integration.  This repository contains all necessary
+code for running the webapp available at http://passthegas.github.io. 
+
+ADRIAN DOCUMENTATION INFO.
+
+The code does not to be built as it is html, and it should run by simply downloading the code and viewing index.html.  It can
+also be seen live at the aforementioned url.
 
 Developers: 
 * [Dawson Botsford](https://github.com/dawsonbotsford) 
